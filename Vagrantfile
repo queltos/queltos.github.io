@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
     echo '' | sudo tee -a /etc/init/jekyll.conf
     echo 'script' | sudo tee -a /etc/init/jekyll.conf
     echo '  cd /vagrant' | sudo tee -a /etc/init/jekyll.conf
-    echo '  sudo -u vagrant /usr/local/bin/jekyll serve -H 0.0.0.0 --detach 2>&1 > /vagrant/jekyll.log' | sudo tee -a /etc/init/jekyll.conf
+    echo '  sudo -u vagrant /usr/local/bin/jekyll serve -w --force_polling -H 0.0.0.0 2>&1 > /vagrant/jekyll.log' | sudo tee -a /etc/init/jekyll.conf
     echo 'end script' | sudo tee -a /etc/init/jekyll.conf
 
     sudo start jekyll
